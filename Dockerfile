@@ -2,13 +2,10 @@
 FROM pytorch/pytorch:latest
 
 ARG USER=standard
-ARG USER_ID=1000 # uid from the previus step --> from command id and e3da group
+ARG USER_ID=1003 # uid from the previus step --> from command id and e3da group
 ARG USER_GROUP=standard
-ARG USER_GROUP_ID=1000 # gid from the previus step --> from command id and e3da
+ARG USER_GROUP_ID=1003 # gid from the previus step --> from command id and e3da
 ARG USER_HOME=/home/${USER}
-
-# set container user
-USER $USER
 
 # create a user group and a user (this works only for debian based images)
 RUN groupadd --gid $USER_GROUP_ID $USER \
@@ -25,6 +22,9 @@ RUN apt update \
 # Security updates
 # https://security.snyk.io/vuln/SNYK-UBUNTU1804-OPENSSL-3314796
 RUN apt upgrade --no-install-recommends -y openssl tar
+
+# set container user
+USER $USER
 
 # WORKDIR /home/e3da
 

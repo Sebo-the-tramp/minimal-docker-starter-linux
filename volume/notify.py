@@ -1,5 +1,10 @@
 import requests
 import time
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def send_message(bot_token, chat_id, message):
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
@@ -14,9 +19,8 @@ def send_message(bot_token, chat_id, message):
         print("Message sent successfully!")
 
 # Replace with your bot token and chat ID
-bot_token = "6028786366:AAHVKMZcUcKtxqbSey-L04y12u7A4FEcliI"
-chat_id = "777722458"
-
+bot_token = os.environ.get('TELEGRAM_TOKEN')
+chat_id = os.environ.get('CHAT_ID')
 
 reason = "🤔REASON: Training GPUs"
 sentTime = "🕧TIME: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
