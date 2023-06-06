@@ -1,0 +1,1 @@
+docker build -t microyolo-scavada-e3da-1:latest .
