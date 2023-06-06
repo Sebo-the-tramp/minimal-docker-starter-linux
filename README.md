@@ -1,0 +1,1 @@
+# Minimal docker starter configuration
