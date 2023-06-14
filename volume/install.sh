@@ -3,18 +3,14 @@ pip install pip install python-dotenv
 
 # install micromind
 cd micromind 
+git checkout refactor
+git pull
 pip install -e .
 cd ..
 
 # install ultralytics
-cd utlralytics
+cd ultralytics
 git config --global --add safe.directory /workspace/ultralytics
 git checkout devel
-
-# start training
-cd ultralytics
-python debugging.py
-cd ..
-
-# notify finish
-python notify.py
+pip install -e .
+pip install ultralytics --upgrade 

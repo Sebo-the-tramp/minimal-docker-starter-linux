@@ -1,5 +1,5 @@
-cd ultralytics
-python debugging.py
-cd ..
+cd micromind/recipes/object_detection
+python train.py
+cd ../../../
 
 python notify.py
