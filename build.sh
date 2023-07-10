@@ -1,1 +1,1 @@
-docker build -t microyolo-scavada-e3da-3:latest .
+docker build -t microyolo-docker-mlflow:latest .
