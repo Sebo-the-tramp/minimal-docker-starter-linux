@@ -1,10 +1,10 @@
 #FROM nvcr.io/nvidia/pytorch:23.04-py3
 FROM pytorch/pytorch:latest
 
-ARG USER=standard
-ARG USER_ID=1003 # uid from the previus step --> from command id and e3da group
-ARG USER_GROUP=standard
-ARG USER_GROUP_ID=1003 # gid from the previus step --> from command id and e3da
+ARG USER=e3da
+ARG USER_ID=1004 # uid from the previus step --> from command id and e3da group
+ARG USER_GROUP=e3da
+ARG USER_GROUP_ID=1004 # gid from the previus step --> from command id and e3da
 ARG USER_HOME=/home/${USER}
 
 # create a user group and a user (this works only for debian based images)
@@ -22,13 +22,10 @@ RUN apt update \
 # Security updates
 # https://security.snyk.io/vuln/SNYK-UBUNTU1804-OPENSSL-3314796
 RUN apt upgrade --no-install-recommends -y openssl tar
+RUN pip install python-dotenv
+RUN pip install ultralytics
 
 # set container user
 USER $USER
 
-RUN pip install pip install python-dotenv
-RUN pip install ultralytics
-
-# WORKDIR /home/e3da
-
-#CMD ["./scripts/main.sh"]
+CMD ["./run_training.sh"]

@@ -1,5 +1,5 @@
 cd micromind/recipes/object_detection
-python train.py
+python 1_head.py
 cd ../../../
 
 python notify.py
