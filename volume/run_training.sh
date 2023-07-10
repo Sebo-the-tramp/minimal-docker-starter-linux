@@ -1,4 +1,6 @@
-cd micromind/recipes/object_detection
+cd micromind/
+pip install -e .
+cd recipes/detection
 python 1_head.py
 cd ../../../
 

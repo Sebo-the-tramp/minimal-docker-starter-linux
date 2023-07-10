@@ -28,4 +28,4 @@ RUN pip install ultralytics
 # set container user
 USER $USER
 
-CMD ["./run_training.sh"]
+ENTRYPOINT ["/bin/bash", "./run_training.sh"]
