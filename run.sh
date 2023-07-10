@@ -1,2 +1,1 @@
-#docker run --name test-microyolo --gpus all --rm -it --shm-size=32gb -v $PWD/volume:/workspace/ -v /raid/home/e3da/datasets/:/workspace/datasets/ microyolo-scavada-e3da-3:latest bash 
-docker run --name test-microyolo-2 --gpus all --rm -it --shm-size=32gb -v $PWD/volume:/workspace/ microyolo-scavada-e3da-3:latest bash 
+docker run --name yolo-test --gpus all --rm -it --shm-size=32gb -v $PWD/volume:/workspace/ -v /raid/home/e3da/datasets/coco/:/workspace/micromind/recipes/segmentation/datasets/coco/ -v /raid/home/e3da/datasets/coco/:/workspace/micromind/recipes/detection/datasets/coco/ -v /raid/home/e3da/datasets/coco/:/workspace/datasets/coco/ microyolo-docker-mlflow:0.1 bash 
