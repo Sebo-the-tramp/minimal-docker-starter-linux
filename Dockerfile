@@ -26,6 +26,9 @@ RUN apt upgrade --no-install-recommends -y openssl tar
 # set container user
 USER $USER
 
+RUN pip install pip install python-dotenv
+RUN pip install ultralytics
+
 # WORKDIR /home/e3da
 
 #CMD ["./scripts/main.sh"]
