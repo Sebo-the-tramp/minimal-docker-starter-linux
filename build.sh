@@ -1,1 +1,1 @@
-docker build -t microyolo-scavada-e3da-3:latest .
+docker build --no-cache -t microyolo-docker-mlflow:1.0 .
