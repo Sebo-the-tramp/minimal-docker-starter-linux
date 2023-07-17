@@ -1,1 +1,1 @@
-docker build --no-cache -t microyolo-docker-mlflow:1.0 .
+docker build --no-cache -t microyolo-docker:1.0 .
