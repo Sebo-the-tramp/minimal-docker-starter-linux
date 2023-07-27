@@ -1,7 +1,7 @@
 cd micromind/
 pip install -e .
 cd recipes/detection
-python 1_head.py
+python detection.py > ../../../log.txt
 cd ../../../
 
 python notify.py
